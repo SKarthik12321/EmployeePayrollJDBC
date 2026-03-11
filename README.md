@@ -12,22 +12,7 @@ Java
 JDBC  
 MySQL  
 Maven  
-Git & GitHub  
-
----
-
-# Project Structure
-
-EmployeePayrollJDBC
-│
-├── src
-│   └── main
-│       └── java
-│           └── com
-│               └── bridgelabz
-│                   └── employeepayroll
-│                       └── EmployeePayrollService.java
----
+Git & GitHub
 
 # Use Cases
 
