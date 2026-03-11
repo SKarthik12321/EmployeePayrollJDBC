@@ -27,7 +27,6 @@ EmployeePayrollJDBC
 │               └── bridgelabz
 │                   └── employeepayroll
 │                       └── EmployeePayrollService.java
-
 ---
 
 # Use Cases
