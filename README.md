@@ -150,16 +150,6 @@ connection.setAutoCommit(false);
 connection.commit();  
 connection.rollback();
 
----
-
-# Git Branch Strategy
-
-main  
-└── README.md  
-
-develop  
-└── src  
-
 feature/uc1  
 feature/uc2  
 feature/uc3  
