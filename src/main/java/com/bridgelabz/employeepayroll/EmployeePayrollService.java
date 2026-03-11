@@ -2,12 +2,9 @@ package com.bridgelabz.employeepayroll;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-<<<<<<< HEAD
 import java.sql.SQLException;
-=======
 import java.sql.ResultSet;
 import java.sql.Statement;
->>>>>>> feature/uc6
 
 public class EmployeePayrollService {
 
@@ -20,28 +17,12 @@ public class EmployeePayrollService {
         try {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-
-<<<<<<< HEAD
             System.out.println("Driver Loaded");
 
-            Connection connection = DriverManager.getConnection(jdbcURL, username, password);
-
-            System.out.println("Connection Established Successfully");
-
-        } catch (ClassNotFoundException e) {
-
-            System.out.println("Driver not found");
-
-        } catch (SQLException e) {
-
-            System.out.println("Connection failed");
-            e.printStackTrace();
-
-        }
-
-=======
             Connection connection =
                     DriverManager.getConnection(jdbcURL, username, password);
+
+            System.out.println("Connection Established Successfully");
 
             Statement statement = connection.createStatement();
 
@@ -61,14 +42,14 @@ public class EmployeePayrollService {
 
                 System.out.println(
                         gender + " | SUM=" + sum +
-                        " | AVG=" + avg +
-                        " | MIN=" + min +
-                        " | MAX=" + max +
-                        " | COUNT=" + count
+                                " | AVG=" + avg +
+                                " | MIN=" + min +
+                                " | MAX=" + max +
+                                " | COUNT=" + count
                 );
             }
 
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
