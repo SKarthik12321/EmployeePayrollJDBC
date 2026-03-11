@@ -2,7 +2,12 @@ package com.bridgelabz.employeepayroll;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+<<<<<<< HEAD
 import java.sql.SQLException;
+=======
+import java.sql.ResultSet;
+import java.sql.Statement;
+>>>>>>> feature/uc6
 
 public class EmployeePayrollService {
 
@@ -16,6 +21,7 @@ public class EmployeePayrollService {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
+<<<<<<< HEAD
             System.out.println("Driver Loaded");
 
             Connection connection = DriverManager.getConnection(jdbcURL, username, password);
@@ -33,5 +39,37 @@ public class EmployeePayrollService {
 
         }
 
+=======
+            Connection connection =
+                    DriverManager.getConnection(jdbcURL, username, password);
+
+            Statement statement = connection.createStatement();
+
+            String query =
+                    "select gender, sum(salary), avg(salary), min(salary), max(salary), count(*) from employee_payroll group by gender";
+
+            ResultSet resultSet = statement.executeQuery(query);
+
+            while(resultSet.next()) {
+
+                String gender = resultSet.getString(1);
+                double sum = resultSet.getDouble(2);
+                double avg = resultSet.getDouble(3);
+                double min = resultSet.getDouble(4);
+                double max = resultSet.getDouble(5);
+                int count = resultSet.getInt(6);
+
+                System.out.println(
+                        gender + " | SUM=" + sum +
+                        " | AVG=" + avg +
+                        " | MIN=" + min +
+                        " | MAX=" + max +
+                        " | COUNT=" + count
+                );
+            }
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 }
